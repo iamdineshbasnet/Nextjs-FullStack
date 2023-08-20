@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
-async function fetchBlogs() {
+export async function fetchBlogs() {
 	const response = await fetch(`http://localhost:3000/api/blog`, {
-		// next: { revalidate: 10 },
+		next: { revalidate: 10 },
 	});
 	const data = await response.json();
 	return data.posts;
